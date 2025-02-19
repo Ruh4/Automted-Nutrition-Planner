@@ -1,0 +1,97 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            Int          @id @default(autoincrement())
+  username      String       @unique
+  email         String       @unique
+  password      String
+  allergies     String
+  prefers       String
+  avoids        String
+  height        Int?
+  weight        Int?
+  age           Int?
+  createdAt     DateTime     @default(now())
+  profile       Profile?
+  mealplans     MealPlan[]
+  shoppingList  ShoppingList[]
+  feedbacks     Feedback[]
+  notifications Notifications[]
+}
+
+model Profile {
+  id              Int      @id @default(autoincrement())
+  userId          Int      @unique
+  mealPreferences String?
+  restrictions    String?
+  user            User     @relation(fields: [userId], references: [id])
+}
+
+model MealPlan {
+  id        Int        @id @default(autoincrement())
+  userId    Int
+  plan      Json
+  mealType  String?
+  nutrition String?
+  recipes   Recipe[]
+  feedbacks Feedback[]
+  user      User       @relation(fields: [userId], references: [id])
+}
+
+model Recipe {
+  id            Int           @id @default(autoincrement())
+  name          String
+  ingredients   Json
+  instructions  String
+  mealPlanId    Int
+  substitutions Substitution[]
+  mealplan     MealPlan      @relation(fields: [mealPlanId], references: [id])
+}
+
+model Substitution {
+  id          Int      @id @default(autoincrement())
+  ingredients String
+  substitute  String
+  recipeId    Int
+  recipe      Recipe   @relation(fields: [recipeId], references: [id])
+}
+
+model ShoppingList {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  items       Json
+  generatedOn DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model Ingredient {
+  id           Int       @id @default(autoincrement())
+  name         String
+  storageTips  String?
+  leftovers    Json
+}
+
+model Feedback {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  mealPlanId  Int
+  feedback    String
+  rating    Int
+  createdAt   DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id])
+  mealPlan    MealPlan  @relation(fields: [mealPlanId], references: [id])
+}
+
+model Notifications {
+  id        Int     @id @default(autoincrement())
+  userId    Int
+  message   String
+  user      User    @relation(fields: [userId], references: [id])
+}

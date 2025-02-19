@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 100px; /* Adjust based on header and navbar height */
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: rgba(68, 68, 68, 0.9);
+  padding: 10px 0;
+  position: fixed; /* Fix the navbar below the header */
+  top: 0; /* Adjust based on header height */
+  left: 0;
+  width: 100%;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background: #575757;
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(244, 244, 244, 0.9); /* Ensure only white area is visible */
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto; /* Adjust this to move details up */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px; /* Square box with rounded corners */
+  margin-bottom: 20px;
+  background: url('nuts.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  cursor: pointer; /* Indicates that the image is clickable */
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+}
+
+.profile-details h2 {
+  margin: 0; /* Remove margin */
+  font-size: 24px;
+  color: #FFA500; /* Carrot color for the heading */
+}
+
+.profile-details p {
+  margin: 0; /* Remove margin */
+  color: #666;
+}
+
+.profile-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.profile-form .form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.profile-form input {
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-form button {
+  background: #4CAF50; /* Green color scheme */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile-form button:hover {
+  background: #45a049;
+}
+
+

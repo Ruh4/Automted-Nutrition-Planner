@@ -1,0 +1,47 @@
+/* Ingredient.css */
+
+.ingredient-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* White background color */
+  min-height: 100vh;
+  color: #27ae60; /* Green text color */
+}
+
+.ingredient-container h2 {
+  color: #27ae60; /* Green color for headings */
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  border-bottom: 2px solid #27ae60; /* Green underline for headings */
+  padding-bottom: 10px;
+  text-transform: uppercase; /* Uppercase for headings */
+}
+
+.leftover-ingredients,
+.recipe-suggestions {
+  margin-bottom: 20px;
+  width: 50%; /* Adjusted width for sections */
+}
+
+.ingredients-list,
+.recipes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ingredients-list p,
+.recipes-list h3,
+.recipes-list p {
+  margin: 0;
+  padding: 0;
+  color: #27ae60; /* Green text color */
+}
+
+.storage-tips-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #27ae60; /* Green text color */
+  font-size: 14px; /* Adjusted font size for readability */
+}

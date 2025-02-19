@@ -1,0 +1,48 @@
+.shopping-list-container {
+  text-align: center; /* Center the text in the container */
+  margin: 0 auto;
+  max-width: 600px; /* Adjust width if needed */
+}
+
+.centered-heading {
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px;
+}
+
+.shopping-list-container input {
+  width: calc(100% - 22px); /* Full width minus padding and border */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.shopping-list-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.shopping-list-container button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.shopping-list-container ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left; /* Align the list text to the left for readability */
+}
+
+.shopping-list-container li {
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+  
